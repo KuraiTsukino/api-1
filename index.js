@@ -3,7 +3,7 @@
 const API_URL = 'http://jsonplaceholder.typicode.com'
 
 const HTMLResponse = document.querySelector('#app')
-const ul = document.createDocumentFragment('ul')
+const tpl = document.createDocumentFragment('tpl')
 
 
 fetch(`${API_URL}/users`)
@@ -12,12 +12,13 @@ fetch(`${API_URL}/users`)
         users.forEach((user) => {
             let elem = document.createElement('li')
             elem.appendChild(
-                document.createTextNode(`${user.name} ✉️ ${user.email}`)
+                document.createTextNode(
+                    `${user.name} (${user.username}) ✉️ ${user.email} 🌐 ${user.address.city} 📞 ${user.phone}`)
             )
-            ul.appendChild(elem)
+            tpl.appendChild(elem)
         })
 
-    HTMLResponse.appendChild(ul)
+    HTMLResponse.appendChild(tpl)
     console.log(users);
 
     // Forma de consumir una API usando Strings para formatear el HTML.
