@@ -1,6 +1,6 @@
 // Forma de hacer una petición AJAX, consumir una API con JavaScript Vanilla.
 
-const API_URL = 'http://jsonplaceholder.typicode.com'
+const API_URL = 'https://jsonplaceholder.typicode.com'
 
 const HTMLResponse = document.querySelector('#app')
 const tpl = document.createDocumentFragment('tpl')
